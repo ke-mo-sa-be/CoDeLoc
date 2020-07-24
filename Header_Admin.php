@@ -54,13 +54,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a class="hvr-sweep-to-bottom">Public</a>
                         <ul>
                             <!-- <li><a href="Admin_AddSquad.php">Add Squad</a></li> -->
-                            <li><a href="Admin_ViewSquad.php">View Public</a></li>
+                            <li><a href="Admin_ViewPublic.php">View Public</a></li>
                         </ul>
 
                     </li>
                     <li><a href="Admin_AddNews.php" class="hvr-sweep-to-bottom">News</a></li>
-                    <li><a href="typo.html" class="hvr-sweep-to-bottom">Emergecy </a></li>
-                    <li><a href="Admin_ViewComplaints.php" class="hvr-sweep-to-bottom">View Complaints </a></li>
+                    <li><a href="Admin_Quarantine.php" class="hvr-sweep-to-bottom">Quarantinee </a></li>
+                    <li><a href="Admin_ViewComplaints.php" class="hvr-sweep-to-bottom">Complaints </a></li>
                     <li><a href="login.php" class="hvr-sweep-to-bottom">Log Out </a></li>
                 </ul>
                 <div class="clearfix"> </div>

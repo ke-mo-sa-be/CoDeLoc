@@ -29,11 +29,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="container">
             <div class="logo">
-
                 <h1>
                     <a href="SquadHome.php">
                         Co De Loc
-                        Public <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+                        Squad <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
                         <lottie-player autoplay loop="true" mode="normal" src=" https://assets4.lottiefiles.com/packages/lf20_wv4mTG.json" style="width: 150px">
                         </lottie-player>
                     </a>
@@ -46,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="Public_ViewSquad.php" class="hvr-sweep-to-bottom">View Public</a></li>
                     <li><a href="ViewNews.php" class="hvr-sweep-to-bottom">View News</a></li>
                     <li><a href="typo.html" class="hvr-sweep-to-bottom">Emergecy </a></li>
-                    <li><a href="PublicSendComp.php" class="hvr-sweep-to-bottom">Report Issues </a></li>
+                    <li><a href="Squad_Report.php" class="hvr-sweep-to-bottom">Report Issues </a></li>
                     <li><a href="login.php" class="hvr-sweep-to-bottom">Log Out </a></li>
                 </ul>
                 <div class="clearfix"> </div>

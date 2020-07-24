@@ -2,7 +2,13 @@
 include("Header_Admin.php");
 include("DBConnect.php")
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function testfun(id) {
+        // alert(id);
+        $('#chooselocality').load("LocalityAJAX.php?id=" + id);
+    };
+</script>
 <style>
     .button {
         background-color: #4CAF50;
@@ -38,6 +44,24 @@ include("DBConnect.php")
 
                 <input class="field_custom" placeholder="Password" type="text" required name="upass" />
 
+                <?php
+                $query = mysqli_query($conn, "SELECT * FROM `tb_district`"); // Run your query
+                echo '<select name="District" onchange="testfun(this.value)">'; // Open your drop down box
+                echo '<option>Select District</option>';
+                // Loop through the query results, outputing the options one by one
+                while ($row = mysqli_fetch_assoc($query)) {
+
+                    echo '<option value="' . $row['dist_id'] . '">' . $row['dist_name'] . '</option>';
+                }
+                echo '</select>'; // Close your drop down box
+                ?>
+                <br>
+                <br>
+                <div id="chooselocality">
+                </div>
+                <br>
+                <br>
+
                 <div><input type="submit" class="button" value="REGISTER SQUAD" name="regbtn"></div>
                 <br />
                 <br />
@@ -57,6 +81,10 @@ if (isset($_REQUEST['regbtn'])) {
     $ucontact = $_REQUEST['contact'];
     $upass = $_REQUEST['upass'];
 
+    $district = $_REQUEST['District'];
+    $locality = $_REQUEST['Locality'];
+
+
     $res = mysqli_query($conn, "SELECT COUNT(*) AS cnt FROM `tb_squad` WHERE `sqcontact`='$ucontact'");
 
     $rs = mysqli_fetch_array($res);
@@ -65,7 +93,7 @@ if (isset($_REQUEST['regbtn'])) {
         echo "<script>alert('Contact Already Exists')</script>";
         // echo "<script>window.location.href='customerRegistration.php';</script>";
     } else {
-        mysqli_query($conn, "INSERT INTO `tb_squad` (`sqname`,`sqcontact`,`sqpass`) VALUES('$uname','$ucontact','$upass')");
+        mysqli_query($conn, "INSERT INTO `tb_squad` (`sqname`,`sqcontact`,`sqpass`,`loc_id`,`dist_id`) VALUES('$uname','$ucontact','$upass','$locality','$district')");
         $QRY2 = "INSERT INTO `tb_login` (`reg_id`,`usertype`,`user_phone`,`user_pass`)values((SELECT max(`squad_id`) from `tb_squad`),'SQUAD','$ucontact','$upass')";
 
         // echo $QRY2;

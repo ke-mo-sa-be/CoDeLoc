@@ -35,19 +35,20 @@ include("DBConnect.php");
 <center>
     <table border="1" class="customers">
         <tr>
-            <th>Squad Name</th>
+            <th>Name</th>
             <th>Contact</th>
-            <th>Password</th>
-            <th>Squad Locality</th>
+            <th>Email</th>
             <th>District</th>
+            <th>Locality</th>
+            <th>health</th>
             <br />
             <br />
             <br />
         </tr>
         <?php
-        $res = mysqli_query($conn, "SELECT * FROM `tb_squad`s,`tb_district` d ,`tb_locality` l WHERE s.`dist_id`=d.`dist_id` AND s.`loc_id`=l.`loc_id`");
+        $res = mysqli_query($conn, "SELECT * FROM `tb_public` p , `tb_district` d, `tb_locality` l WHERE p.`district`=d.`dist_id` AND d.`dist_id`=l.`district` AND p.`locality`=l.`loc_id`");
         while ($rs = mysqli_fetch_array($res)) {
-            echo "<tr><td>$rs[sqname]</td><td>$rs[sqcontact]</td><td>$rs[sqpass]</td><td>$rs[locality]</td><td>$rs[dist_name]</td></tr>";
+            echo "<tr><td>$rs[name]</td><td>$rs[contact]</td><td>$rs[email]</td><td>$rs[district]</td><td>$rs[locality]</td><td>$rs[health]</td><td><a href='PublicReportProcess.php?pub_id=$rs[pub_id]&locality=$rs[locality]'>Report</a></td></tr>";
         }
         ?>
     </table>
