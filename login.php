@@ -27,13 +27,13 @@ if (isset($_REQUEST['loginbtn'])) {
 
     $_SESSION['userphone'] = $phone;
     $_SESSION['usertype'] = $rs["usertype"];
-    
+
     $_SESSION['reg_id'] = $rs["reg_id"];
 
 
     if ($rs['cnt'] > 0 && $rs["usertype"] == "SQUAD") {
         echo "<script>alert('LOGIN SUCCESS')</script>";
-        echo "<script>window.location.href='CustomerHome.php';</script>";
+        echo "<script>window.location.href='SquadHome.php';</script>";
     }
     if ($rs['cnt'] > 0 && $rs["usertype"] == "ADMIN") {
         echo "<script>alert('LOGIN SUCCESS')</script>";
